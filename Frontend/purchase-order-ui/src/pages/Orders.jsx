@@ -49,6 +49,17 @@ async function handleEdit(orderId) {
 
   setEditingOrder(data);
 }
+const [receiptOrder, setReceiptOrder] = useState(null);
+
+async function handlePrint(orderId) {
+  const res = await fetch(`http://127.0.0.1:8000/order-items/${orderId}`);
+  const data = await res.json();
+
+  setReceiptOrder(data);
+
+  // Give React a moment to render the receipt
+  setTimeout(() => window.print(), 0);
+}
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center">
@@ -127,6 +138,12 @@ async function handleEdit(orderId) {
 >
   Delete
 </button>
+ <button
+                        onClick={() => handlePrint(order.id)}
+                        className="rounded bg-blue-600 px-3 py-1 text-white hover:bg-blue-700"
+                      >
+                        Print
+                      </button>
 
                     </div>
                   </td>

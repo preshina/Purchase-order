@@ -98,4 +98,5 @@ class PurchaseService:
         )
 
     def get_purchase_order_detail(self, id):
+
         return self.repo.get_purchase_order_detail(id)

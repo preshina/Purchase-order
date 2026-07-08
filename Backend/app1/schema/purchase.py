@@ -61,7 +61,10 @@ class PurchaseOrderDetailResponse(BaseModel):
     id: int
     order_number: str
     status: str
+    discount_amount: float
+    vat_amount: float
     grand_total: float
+
     items: list[PurchaseResponse]
 
     class Config:

@@ -7,6 +7,9 @@
 *.sqlite3
 
 # Virtual environments
+.venv/
+venv/
+env/
 Backend/venv/
 Backend/.venv/
 Backend/env/
@@ -17,7 +20,7 @@ Backend/.env
 Frontend/.env
 
 # React
-Frontend/node_modules/
+Frontend/purchase-order-ui/node_modules/
 Frontend/dist/
 Frontend/build/
 
